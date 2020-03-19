@@ -1,0 +1,24 @@
+{
+  "name": "javclub_workers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gd.js",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "js-base64": "^2.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAVClub/workers.git"
+  },
+  "author": "XiaoLin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JAVClub/workers/issues"
+  },
+  "homepage": "https://github.com/JAVClub/workers#readme"
+}
