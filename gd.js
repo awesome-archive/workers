@@ -1,11 +1,6 @@
 const CryptoJS = require('crypto-js');
 const Base64 = require('js-base64').Base64;
-const authConfig = {
-    "ase_password": "",
-    "client_id": "",
-    "client_secret": "",
-    "refresh_token": ""
-};
+const authConfig = require('./gd-config');
 
 let gd;
 
@@ -37,7 +32,7 @@ async function handleRequest(event) {
 
     try {
         str = Base64.decode(str)
-        fileId = CryptoJS.AES.decrypt(str, authConfig.ase_password).toString(CryptoJS.enc.Utf8);
+        fileId = CryptoJS.AES.decrypt(str, authConfig.aes_password).toString(CryptoJS.enc.Utf8);
     } catch (error) {
         console.error('error', error);
         return new Response(JSON.stringify({
@@ -123,7 +118,10 @@ class googleDrive {
         let requestOption = {
             'method': 'POST',
             'headers': headers,
-            'body': this.enQuery(post_data)
+            'body': this.enQuery(post_data),
+            cf: {
+                cacheTtl: 60
+            }
         };
 
         const response = await fetch(url, requestOption);

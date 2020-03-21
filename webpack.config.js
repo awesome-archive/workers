@@ -1,3 +1,4 @@
 module.exports = {
-    target: 'webworker'
+    target: 'webworker',
+    mode: 'production'
 };

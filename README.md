@@ -12,8 +12,10 @@ Cloudflare Worker 上的代理脚本们
 
 ```bash
 npm i
-webpack gd.js
+cp gd-config.example.js gd-config.js
 ```
+
+在 `gd-config.js` 中填写好配置后运行构建命令 `webpack gd.js` 即可
 
 构建完成后将 `dist/main.js` 的内容部署在 Worker 上即可
 
